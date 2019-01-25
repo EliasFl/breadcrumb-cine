@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
+Route::get('/genre', 'GenreController@index')->name('genres');
+Route::get('/genres/{genre}', 'GenreController@show')->name('genres.show');
+Route::get('/movies/{movie}', 'MovieController@show')->name('movies.show');
